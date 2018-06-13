@@ -1,0 +1,24 @@
+function: com.buildit.document.DocumentIndexer::handleRequest
+role: role/service-role/myRole
+timeout: 300
+memory: 2048
+runtime: java8
+---
+profile:
+  id: dev
+  active: true
+suffix: -dev
+index:
+    host: https://dev-search-bp-documents-dwskadrkcyb25rtttjrwbr6w3a.us-east-1.es.amazonaws.com
+---
+profile
+  id: test
+suffix: -test
+index:
+    host: https://test-search-bp-documents-dwskadrkcyb25rtttjrwbr6w3a.us-east-1.es.amazonaws.com
+---
+profile:
+  id: prod
+suffix: ''
+index:
+    host: https://search-bp-documents-dwskadrkcyb25rtttjrwbr6w3a.us-east-1.es.amazonaws.com
